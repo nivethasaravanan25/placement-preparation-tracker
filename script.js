@@ -6,11 +6,34 @@ displayTasks();
 
 // COMPANY DATA
 let companies = {
-    "TCS": ["Aptitude", "Basic Coding", "Communication"],
-    "Infosys": ["Aptitude", "DBMS", "OOPs"],
-    "Wipro": ["Aptitude", "Coding", "Logical Reasoning"],
-    "Accenture": ["Coding", "Pseudocode", "Communication"],
-    "Zoho": ["DSA", "Strong Coding", "Projects"]
+    "TCS": [
+        "Aptitude Round",
+        "Coding Round",
+        "Technical Interview",
+        "HR Interview"
+    ],
+    "Infosys": [
+        "Aptitude",
+        "DBMS + OOPs",
+        "Technical Round",
+        "HR Round"
+    ],
+    "Wipro": [
+        "Aptitude",
+        "Coding",
+        "Communication Test",
+        "Interview"
+    ],
+    "Accenture": [
+        "Pseudocode Round",
+        "Coding Round",
+        "Technical + HR"
+    ],
+    "Zoho": [
+        "Advanced DSA",
+        "Strong Coding",
+        "Multiple Interview Rounds"
+    ]
 };
 
 // ADD TASK
@@ -48,6 +71,10 @@ function displayTasks() {
             </span>
             <button onclick="deleteTask(${i})">X</button>
         `;
+        if (t.completed) {
+    li.style.textDecoration = "line-through";
+    li.style.opacity = "0.6";
+}
 
         list.appendChild(li);
     });
