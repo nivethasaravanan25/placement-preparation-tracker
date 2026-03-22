@@ -2,23 +2,19 @@
 <html>
 <head>
     <title>Placement Tracker</title>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 class="main-title">🚀 Placement Preparation Tracker</h1>
-    <p style="text-align:center;">Track • Improve • Crack Placements 💼</p>
-    <div class="goal-bar">
-    <div id="goalProgress"></div>
-</div>
-<p id="goalMsg"></p>
-<p id="stats"></p>
-<button onclick="resetGoal()">Reset</button>
+
+<h1 class="main-title">🚀 Placement Preparation Tracker</h1>
+<p style="text-align:center;">Track • Improve • Crack Placements 💼</p>
+
 
 <div class="main-container">
 
-    <!-- LEFT SIDE -->
+    <!-- LEFT -->
     <div class="left card">
-        <h2>📌 Tasks</h2>
 
         <div class="input-section">
             <input type="text" id="taskInput" placeholder="Enter topic">
@@ -27,45 +23,64 @@
                 <option value="DSA">DSA</option>
                 <option value="Aptitude">Aptitude</option>
                 <option value="Core">Core</option>
-                <option value="communication skills">Communication skills</option>
                 <option value="Programming">Programming</option>
-                <option value="Resume building">Resume building</option>
+                <option value="Resume building">Resume buildinhg</option>
+                <option value="Communication skills">Communication skills</option>.
+                <option value="Problem solving">Problem solving</option>
             </select>
 
             <select id="difficulty">
-                <option value="Hard">Hard</option>
-                <option value="Medium">Medium </option>
-                <option value="Easy">Easy</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
             </select>
 
             <button onclick="addTask()">Add</button>
         </div>
 
-        
-        <!-- PROGRESS -->
-        <div class="progress-container">
-            <div id="progressBar"></div>
-        </div>
-
         <h3 id="progress">Progress: 0%</h3>
+        <div class="progress-bar">
+    <div id="progressFill"></div>
+</div>
         <h4 id="stats"></h4>
 
-        <!-- TASK LIST -->
         <ul id="taskList"></ul>
 
-        <button onclick="clearAll()">Clear All</button>
     </div>
 
-    <!-- RIGHT SIDE -->
+    <!-- RIGHT -->
     <div class="right">
 
         <!-- GOAL -->
         <div class="card">
             <h3>🎯 Daily Goal</h3>
-            <input type="number" id="goal" placeholder="Set goal">
+            <input type="number" id="goalInput" placeholder="Set goal">
             <button onclick="setGoal()">Set</button>
-            <h4 id="goalStatus"></h4>
+            <p id="goalText">Goal: 0 / 0</p>
+            <p id="goalMsg"></p>
         </div>
+
+        <!-- STREAK -->
+        <div class="card">
+            <h3 id="streakText">🔥 Streak: 0</h3>
+            <p id="streakMsg"></p>
+        </div>
+
+        <!-- COMPANY -->
+        <div class="card">
+            <h3>🏢 Companies</h3>
+            <select id="companySelect" onchange="showCompanyDetails()">
+                <option>Select Company</option>
+                <option value="TCS">TCS</option>
+                <option value="Infosys">Infosys</option>
+                <option value="Wipro">Wipro</option>
+                <option value="Accenture">Accenture</option>
+                <option value="Zoho">Zoho</option>
+            </select>
+            <ul id="companyDetails"></ul>
+        </div>
+
+        <!-- ROADMAP -->
         <div class="card">
     <h3>📚 Placement Roadmap</h3>
     <ul>
@@ -76,33 +91,7 @@
         <li>✔ Attend Mock Interviews</li>
     </ul>
 </div>
-
-        <!-- COMPANY -->
-        <div class="card">
-            <h3>🏢 Companies</h3>
-
-            <select id="companySelect" onchange="showCompanyDetails()">
-                <option>Select Company</option>
-                <option value="TCS">TCS</option>
-                <option value="Infosys">Infosys</option>
-                <option value="Wipro">Wipro</option>
-                <option value="Accenture">Accenture</option>
-                <option value="Zoho">Zoho</option>
-            </select>
-
-            <ul id="companyDetails"></ul>
-        </div>
-
-        <!-- STREAK -->
-        <div class="card">
-            <h3 id="streak">🔥 Streak: 0</h3>
             
-        </div>
-
-        <!-- THEME -->
-        <div class="card">
-            <button onclick="toggleTheme()">🌙 Toggle Theme</button>
-        </div>
 
     </div>
 
